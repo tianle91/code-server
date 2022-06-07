@@ -1,0 +1,18 @@
+---
+version: "2.1"
+services:
+  code-server:
+    build:
+      context: .
+    volumes:
+      - ./config:/root/.config
+    ports:
+      - 8080:8080
+    deploy:
+      restart_policy:
+        condition: on-failure
+      resources:
+        reservations:
+          devices:
+          - driver: nvidia
+            capabilities: [gpu]
