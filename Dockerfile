@@ -1,4 +1,4 @@
-FROM  nvidia/cuda:11.0.3-base-ubuntu20.04
+FROM nvidia/cuda:11.0.3-base-ubuntu20.04
 RUN apt update -y 
 
 # python
@@ -15,7 +15,7 @@ ENV PYSPARK_DRIVER_PYTHON=/usr/bin/python
 ENV JAVA_HOME=/usr/lib/jvm/default-java
 
 # code server
-RUN apt install -y curl
+RUN apt install -y curl git
 RUN curl -fsSL https://code-server.dev/install.sh | sh
 
 ENTRYPOINT code-server
