@@ -21,4 +21,8 @@ RUN curl -fsSL https://code-server.dev/install.sh | sh
 RUN git config --global user.email "tianlechen@gmail.com"
 RUN git config --global user.name "Tianle"
 
+# kaggle
+COPY kaggle.json /root/.kaggle
+RUN pip install kaggle
+
 ENTRYPOINT code-server
