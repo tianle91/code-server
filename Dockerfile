@@ -16,7 +16,7 @@ ENV PYSPARK_DRIVER_PYTHON=/usr/bin/python
 ENV JAVA_HOME=/usr/lib/jvm/default-java
 
 # code server
-RUN apt install -y curl git
+RUN apt install -y curl git vim
 RUN curl -fsSL https://code-server.dev/install.sh | sh
 RUN git config --global user.email "tianlechen@gmail.com"
 RUN git config --global user.name "Tianle"
