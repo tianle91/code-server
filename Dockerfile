@@ -5,6 +5,7 @@ RUN apt update -y
 RUN apt install -y python3 python3-pip python3-venv
 RUN ln -fs /usr/bin/python3 /usr/bin/python
 RUN python -m pip install -U pip
+RUN echo 'alias venv="python -m venv"' >> ~/.bashrc
 
 # spark
 RUN apt install --no-install-recommends -y openjdk-11-jdk-headless ca-certificates-java
