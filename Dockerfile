@@ -3,7 +3,6 @@ RUN apt update -y
 
 # python
 RUN apt install -y gcc libpq-dev
-RUN apt install -y python-dev  python-pip
 RUN apt install -y python3-dev python3-pip python3-venv python3-wheel
 RUN ln -fs /usr/bin/python3 /usr/bin/python
 RUN python -m pip install -U pip wheel
