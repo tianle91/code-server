@@ -9,11 +9,11 @@ RUN python -m pip install -U pip wheel
 RUN echo 'alias venv="python -m venv"' >> ~/.bashrc
 
 # spark
-RUN apt install --no-install-recommends -y openjdk-11-jdk-headless ca-certificates-java
+RUN apt install --no-install-recommends -y openjdk-11-jdk-headless
+ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 RUN pip install pyspark==3.2.1
 ENV PYSPARK_PYTHON=/usr/bin/python
 ENV PYSPARK_DRIVER_PYTHON=/usr/bin/python
-ENV JAVA_HOME=/usr/lib/jvm/default-java
 
 # code server
 RUN apt install -y curl git
@@ -23,11 +23,6 @@ RUN git config --global user.name "Tianle"
 
 # other utilities
 RUN apt intall -y vim unzip
-
-# kaggle
-RUN pip install kaggle
-RUN mkdir /root/.kaggle
-COPY kaggle.json /root/.kaggle
 
 WORKDIR /workspace
 ENTRYPOINT code-server
