@@ -22,7 +22,7 @@ RUN git config --global user.email "tianlechen@gmail.com"
 RUN git config --global user.name "Tianle"
 
 # other utilities
-RUN apt intall -y vim unzip
+RUN apt install -y vim unzip
 
 WORKDIR /workspace
 ENTRYPOINT code-server
