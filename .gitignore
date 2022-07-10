@@ -1,8 +1,2 @@
-# config
-config/code-server/config.yaml
-
-# kaggle
-kaggle.json
-
 # workspace
 workspace/
